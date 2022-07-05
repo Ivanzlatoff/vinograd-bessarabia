@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
@@ -12,6 +12,19 @@ const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove } = useStateContext();
   
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside, true);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside, true);
+    }
+  }, []);
+
+  const handleClickOutside = (event) => {
+    if (!cartRef.current.contains(event.target)) {
+      setShowCart(false)
+    }
+  } 
   const handleCheckout = async () => {
     const stripe = await getStripe();
 
@@ -33,8 +46,8 @@ const Cart = () => {
   }
   
   return (
-    <div className="cart-wrapper" ref={cartRef}>
-      <div className="cart-container">
+    <div className="cart-wrapper">
+      <div className="cart-container" ref={cartRef}>
         <button
         type="button"
         className="cart-heading"

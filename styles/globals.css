@@ -725,20 +725,20 @@ color: white;
     height: 560px;
   }
   .hero-banner-image{
-    width: 57%;
-    height: 42%;
-    top: 35%;
-    right: 0%;
+    width: 40%;
+    height: 40%;
+    top: 25%;
+    right: 10%;
   }
   .footer-banner-container{
     height: 560px;
     margin-top: 80px;
   }
   .footer-banner-image{
-    width: 60%;
-    left: 28%;
+    width: 40%;
+    left: 50%;
     top: 6%;
-    height: 50%
+    height: 40%
   }
   .banner-desc .left h3{
     font-weight: 800;
@@ -753,6 +753,7 @@ color: white;
   }
   .banner-desc .right p{
     font-size: 18px;
+    margin-top: 30px;
   }
   .banner-desc .right .company-desc{
     font-size: 14px;
@@ -899,10 +900,7 @@ color: white;
     margin: -40px;
     padding: 0;
   }
-  .footer-container{
-    margin: -40px;
-  }
-
+  
 .item-desc .flex{
   display: flex;
   justify-content: space-between;

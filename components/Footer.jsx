@@ -7,7 +7,7 @@ const Footer = () => {
       <hr />
       <p>2022 Vinograd Bessarabii All rights reserved </p>
       <p className="icons">
-        <AiFillInstagram />
+        {/* <AiFillInstagram /> */}
       </p>
     </div>
   )
